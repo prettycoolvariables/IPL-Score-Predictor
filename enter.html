@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPL Score Prediction</title>
+    <link rel="stylesheet" type="text/css" href="enter.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>IPL Score Prediction</h2>
+      <form action="#">
+        <label for="currentScore">Current Score</label>
+        <input type="number" id="currentScore" name="currentScore" required />
+
+        <label for="wicketsRemaining">Wickets Remaining</label>
+        <input
+          type="number"
+          id="wicketsRemaining"
+          name="wicketsRemaining"
+          required
+          max="10"
+        />
+
+        <label for="lastThreeOverWickets">Last 3 Over Wickets</label>
+        <input
+          type="number"
+          id="lastThreeOverWickets"
+          name="lastThreeOverWickets"
+          required
+          max="10"
+        />
+
+        <label for="lastThreeOverRuns">Last 3 Over Runs</label>
+        <input
+          type="number"
+          id="lastThreeOverRuns"
+          name="lastThreeOverRuns"
+          required
+        />
+
+        <label for="stadium">Stadium</label>
+        <select id="stadium" name="stadium" required>
+          <option value="">Select Stadium</option>
+          <option value="1">Eden Gardens</option>
+          <option value="2">Wankhede Stadium</option>
+          <option value="3">M. Chinnaswamy Stadium</option>
+          <!-- Add more options as needed -->
+        </select>
+
+        <input type="submit" value="Predict" />
+      </form>
+    </div>
+  </body>
+</html>
