@@ -1,0 +1,8 @@
+body{
+    background-color: burlywood;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container {
+    justify-content: center;
+}

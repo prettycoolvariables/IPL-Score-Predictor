@@ -2,7 +2,7 @@ body {
     font-family:Georgia, 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
-    background-image: url("—Pngtree—icc\ cricket\ world\ match\ background_13431639.png");
+    background-image: url("—Pngtree—icc cricket world match background_13431639.png");
     background-size: cover;
     position: relative;
     background-repeat: no-repeat;
@@ -11,10 +11,10 @@ body {
 .container {
     max-width: 600px;
     margin: 50px auto;
-    background-color: rgba(98, 4, 4, 0.7); 
+    background-color: rgba(28, 26, 26, 0.7); 
     padding: 20px;
     color: rgb(223, 205, 205);
-    border-radius: 3px;
+    border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
