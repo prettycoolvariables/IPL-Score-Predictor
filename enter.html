@@ -10,6 +10,32 @@
     <div class="container">
       <h2>IPL Score Prediction</h2>
       <form action="#">
+        <label for="batting team">Batting Team</label>
+        <select id="batting team" name="batting team" required>
+          <option value="">Select Batting Team</option>
+          <option value="1">Kolkata Knight Riders</option>
+          <option value="2">Chennai Super Kings</option>
+          <option value="3">Rajasthan Royals</option>
+          <option value="4">Mumbai Indians</option>
+          <option value="5">Kings XI Punjab</option>
+          <option value="6">Delhi Daredevils</option>
+          <option value="7">Royal Challengers Bangalore</option>
+          <option value="8">Sunrisers Hyderabad</option>
+        </select>
+
+        <label for="bowling team">Bowling Team</label>
+        <select id="bowling team" name="bowling team" required>
+          <option value="">Select Bowling Team</option>
+          <option value="1">Kolkata Knight Riders</option>
+          <option value="2">Chennai Super Kings</option>
+          <option value="3">Rajasthan Royals</option>
+          <option value="4">Mumbai Indians</option>
+          <option value="5">Kings XI Punjab</option>
+          <option value="6">Delhi Daredevils</option>
+          <option value="7">Royal Challengers Bangalore</option>
+          <option value="8">Sunrisers Hyderabad</option>
+        </select>
+
         <label for="currentScore">Current Score</label>
         <input type="number" id="currentScore" name="currentScore" required />
 
@@ -22,7 +48,7 @@
           max="10"
         />
 
-        <label for="lastThreeOverWickets">Last 3 Over Wickets</label>
+        <label for="lastThreeOverWickets">Last 5 Over Wickets</label>
         <input
           type="number"
           id="lastThreeOverWickets"
@@ -31,7 +57,7 @@
           max="10"
         />
 
-        <label for="lastThreeOverRuns">Last 3 Over Runs</label>
+        <label for="lastThreeOverRuns">Last 5 Over Runs</label>
         <input
           type="number"
           id="lastThreeOverRuns"
