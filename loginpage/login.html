@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPL Score Predictor</title>
+    <link rel="stylesheet" type="text/css" href="login.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Login</h2>
+      <form id="Loginaccount">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+
+        <input type="submit" value="Login" />
+      </form>
+      <p class="success-message" id="successMessage">Logged in successfully!</p>
+
+      <script>
+        const form = document.getElementById("Loginaccount");
+        const successMessage = document.getElementById("successMessage");
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          successMessage.style.display = "block";
+          form.reset();
+
+          document.body.style.opacity = 0;
+          setTimeout(() => {
+            window.location.href = "../predictpage/predict.html";
+          }, 500);
+        });
+      </script>
+    </div>
+  </body>
+</html>

@@ -4,8 +4,9 @@ body {
     padding: 0;
     background-color: #616161;
     color: #ccc;
-    background-image: url("poster-for-ipl-2024-auction-v0-sfl76d4g077c1.jpg");
+    background-image: url("cricket-fielder-catching-ball-neon-260nw-1859579206.webp");
     background-size: cover;
+    transition: opacity 0.5s ease;
   }
   
 h1{
@@ -19,7 +20,7 @@ h1{
     max-width: 400px;
     position: absolute;
     top: 18%;
-    left: 35%;
+    left: 65%;
     margin: 100px auto;
     background-color: rgba(34, 33, 33, 0.937);
     padding: 20px;
@@ -46,6 +47,7 @@ select {
 input[type="submit"] {
     width: 100%;
     background-color:rgb(104, 6, 60);
+    font-family: 'Times New Roman', Times, serif;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -56,4 +58,10 @@ input[type="submit"] {
   
 input[type="submit"]:hover {
     background-color: rgba(237, 6, 187, 0.752);
+  }
+
+
+.success-message {
+    display: none; 
+    color: green; 
   }
