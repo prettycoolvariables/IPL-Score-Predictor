@@ -1,11 +1,15 @@
 body {
     font-family:'Times New Roman', Times, serif;
+    background-image: url("cricket.png");
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
 .container {
     width: 80%;
     margin: 0 auto;
     padding: 20px;
+    color: white;
   }
 
 .team {

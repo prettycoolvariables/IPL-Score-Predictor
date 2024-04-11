@@ -10,14 +10,24 @@
     <div class="container">
       <nav>
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#teams">Teams</a></li>
-          <li><a href="\createaccountpage\create.html">Register</a></li>
-          <li><a href="\loginpage\login.html">Login</a></li>
+          <li><a href="#about" class="smooth-scroll-link">About</a></li>
+          <li><a href="#teams" class="smooth-scroll-link">Teams</a></li>
+          <li>
+            <a
+              href="\createaccountpage\create.html"
+              class="smooth-page-transition"
+              >Register</a
+            >
+          </li>
+          <li>
+            <a href="\loginpage\login.html" class="smooth-page-transition"
+              >Login</a
+            >
+          </li>
         </ul>
       </nav>
     </div>
-
+    <img src="Indian-Premier-League-Logo-2017.png" alt="IPL Logo" />
     <section id="about">
       <h1>ABOUT</h1>
       <p>
@@ -57,10 +67,9 @@
           <img src="mi.png" alt="Mumbai Indians" />
           <h2>Mumbai Indians</h2>
         </div>
-
         <div class="team">
-          <img src="rcb.png" alt="Royal Challengers Bangalore" />
-          <h2>Royal Challengers Bangalore</h2>
+          <img src="rcb.png" alt="Royal Challengers Bengaluru" />
+          <h2>Royal Challengers Bengaluru</h2>
         </div>
         <div class="team">
           <img src="dc.png" alt="Delhi Capitals" />
@@ -76,22 +85,28 @@
         </div>
       </div>
     </section>
-  </body>
-  <footer>
-    <h3>Contact</h3>
-    <p>Email : iplscore@gmail.com</p>
-    <p>Phone No : +91 9867577621</p>
-  </footer>
-</html>
 
-<!-- <h1>IPL Teams</h1>
-      <p>Rajasthan Royals</p>
-      <p>Kolkata Knight Riders</p>
-      <p>Lucknow Super Giants</p>
-      <p>Chennai Super Kings</p>
-      <p>Sunrisers Hyderabad</p>
-      <p>Punjab Kings</p>
-      <p>Gujarat Titans</p>
-      <p>Mumbai Indians</p>
-      <p>Royal Challengers Bangalore</p>
-      <p>Delhi Capitals</p> -->
+    <footer>
+      <h3>Contact</h3>
+      <p>Email : iplscore@gmail.com</p>
+      <p>Phone No : +91 9867577621</p>
+    </footer>
+
+    <script>
+      document.querySelectorAll(".smooth-scroll-link").forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

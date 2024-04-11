@@ -1,11 +1,12 @@
 body {
-    font-family:'Times New Roman', Times, serif;
-    color: aliceblue;
-    background-color: black;
-    transition: opacity 0.5s ease;
-  }
+  font-family: "Times New Roman", Times, serif;
+  color: aliceblue;
+  background-color: black;
+  transition: opacity 0.5s ease;
+  background-size: cover;
+}
 
-h1{
+h1 {
   text-align: center;
   margin-top: 5%;
 }
@@ -20,12 +21,12 @@ h1{
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+}
 
 label {
-    display: block;
-    margin-top: 10px;
-  }
+  display: block;
+  margin-top: 10px;
+}
 
 input[type="text"],
 input[type="email"],
@@ -37,12 +38,12 @@ input[type="password"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  }
+}
 
 input[type="submit"] {
   width: 100%;
-  font-family: 'Times New Roman', Times, serif;
-  background-color:rgb(104, 6, 60);
+  font-family: "Times New Roman", Times, serif;
+  background-color: rgb(104, 6, 60);
   font-size: 20px;
   color: white;
   padding: 14px 20px;
@@ -50,13 +51,13 @@ input[type="submit"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  }
+}
 
 input[type="submit"]:hover {
-    background-color: rgba(237, 6, 187, 0.752);
-  }
+  background-color: rgba(237, 6, 187, 0.752);
+}
 
 .success-message {
-  display: none; 
-  color: green; 
+  display: none;
+  color: green;
 }

@@ -2,7 +2,9 @@ body {
     font-family:Georgia, 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
-    background-color: #000000;
+    background-image: url("createaccount.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
     color: #ffffff;
     transition: opacity 0.5s ease;
   }
@@ -18,7 +20,7 @@ h1{
     max-width: 400px;
     position: absolute;
     top: 18%;
-    left: 36%;
+    left: 56%;
     margin: 100px auto;
     background-color: rgba(34, 33, 33, 0.937);
     padding: 20px;
