@@ -22,29 +22,54 @@
           <option value="2">Chennai Super Kings</option>
           <option value="3">Rajasthan Royals</option>
           <option value="4">Mumbai Indians</option>
-          <option value="5">Kings XI Punjab</option>
-          <option value="6">Delhi Daredevils</option>
-          <option value="7">Royal Challengers Bangalore</option>
+          <option value="5">Punjab Kings</option>
+          <option value="6">Delhi Captains</option>
+          <option value="7">Royal Challengers Bengaluru</option>
           <option value="8">Sunrisers Hyderabad</option>
+          <option value="9">Lucknow Super Giants</option>
+          <option value="10">Gujarat Titans</option>
         </select>
 
         <label for="bowling team">Bowling Team</label>
-        <select id="bowling team" name="bowling team" required>
+        <select
+          id="bowling team"
+          name="bowling team"
+          onchange="updateFirstDropdown()"
+          required
+        >
           <option value="">Select Bowling Team</option>
           <option value="1">Kolkata Knight Riders</option>
           <option value="2">Chennai Super Kings</option>
           <option value="3">Rajasthan Royals</option>
           <option value="4">Mumbai Indians</option>
-          <option value="5">Kings XI Punjab</option>
-          <option value="6">Delhi Daredevils</option>
-          <option value="7">Royal Challengers Bangalore</option>
+          <option value="5">Punjab Kings</option>
+          <option value="6">Delhi Captains</option>
+          <option value="7">Royal Challengers Bengaluru</option>
           <option value="8">Sunrisers Hyderabad</option>
+          <option value="9">Lucknow Super Giants</option>
+          <option value="10">Gujarat Titans</option>
         </select>
 
         <script>
           function updateSecondDropdown() {
             var firstDropdown = document.getElementById("batting team");
             var secondDropdown = document.getElementById("bowling team");
+            var selectedValue = firstDropdown.value;
+            var options = secondDropdown.options;
+            for (var i = 0; i < options.length; i++) {
+              if (options[i].value === selectedValue) {
+                options[i].disabled = true;
+              } else {
+                options[i].disabled = false;
+              }
+            }
+          }
+        </script>
+
+        <script>
+          function updateFirstDropdown() {
+            var firstDropdown = document.getElementById("bowling team");
+            var secondDropdown = document.getElementById("batting team");
             var selectedValue = firstDropdown.value;
             var options = secondDropdown.options;
             for (var i = 0; i < options.length; i++) {
@@ -86,22 +111,22 @@
           min="0"
         />
 
-        <label for="lastThreeOverWickets">Last 5 Over Wickets</label>
+        <label for="lastFiveOverWickets">Last 5 Over Wickets</label>
         <input
           type="number"
-          id="lastThreeOverWickets"
-          name="lastThreeOverWickets"
+          id="lastFiveOverWickets"
+          name="lastFiveOverWickets"
           required
           min="0"
           max="10"
         />
 
-        <label for="lastThreeOverRuns">Last 5 Over Runs</label>
+        <label for="lastFiveOverRuns">Last 5 Over Runs</label>
         <input
           type="number"
-          id="lastThreeOverRuns"
-          name="lastThreeOverRuns"
-          max="20"
+          id="lastFiveOverRuns"
+          name="lastFiveOverRuns"
+          max="30"
           min="0"
           required
         />
@@ -112,7 +137,6 @@
           <option value="1">Eden Gardens</option>
           <option value="2">Wankhede Stadium</option>
           <option value="3">M. Chinnaswamy Stadium</option>
-          <!-- Add more options as needed -->
         </select>
         <input type="submit" value="Predict" />
       </form>

@@ -1,29 +1,6 @@
 body {
-    font-family:'Times New Roman', Times, serif;
-    background-image: url("cricket.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    color: white;
-  }
-
-.team {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-
-.team img {
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
-  }
-
-.team h2 {
-    flex: 1;
-  }
+  font-family: "Times New Roman", Times, serif;
+  background-image: url("cricket.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}

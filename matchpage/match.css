@@ -50,3 +50,13 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: rgba(12, 166, 243, 0.826);
 }
+
+option {
+  background-color: #f0f0f0;
+  color: #030303;
+}
+
+option:checked {
+  background-color: #007bff;
+  color: #fff;
+}
