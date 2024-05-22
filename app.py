@@ -31,7 +31,7 @@ def create():
         email = request.form['email']
         password = request.form['password']
         
-       
+      
         
         # Insert user data into MongoDB
         user_data = {
@@ -103,9 +103,9 @@ def score_predict(venue,innings,ball,batting_team, bowling_team,runs,cruns,cwick
   elif venue == 'Punjab Cricket Association IS Bindra Stadium, Mohali':
     stadium=[0,0,0,0,0,0,0,1,0,0,0]
   elif venue == 'Rajiv Gandhi International Stadium, Hyderabad':
-     stadium=[0,0,0,0,0,0,0,0,1,0,0]
+    stadium=[0,0,0,0,0,0,0,0,1,0,0]
   elif venue == 'Sawai Mansingh Stadium, Jaipur':
-     stadium=[0,0,0,0,0,0,0,0,0,1,0]
+    stadium=[0,0,0,0,0,0,0,0,0,1,0]
   elif venue == 'Wankhede Stadium, Mumbai':
     stadium=[0,0,0,0,0,0,0,0,0,0,1]
       
