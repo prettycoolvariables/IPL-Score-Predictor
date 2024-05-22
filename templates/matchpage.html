@@ -7,13 +7,13 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{{ url_for('static', filename='styles/matchpage.css') }}"
+      href="../static/styles/matchpage.css"
     />
   </head>
   <body>
     <div class="container">
       <h2>IPL Score Prediction</h2>
-      <form action="{{ url_for('predict') }}">
+      <form action="{{ url_for('predict') }}" method="post">
         <label for="battingteam">Batting Team</label>
         <select
           id="battingteam"
@@ -109,13 +109,13 @@
             });
         </script>
 
-        <label for="currentOver">Current Over</label>
+        <label for="currentBall">Current Ball</label>
         <input
-          type="number"
-          id="currentOver"
-          name="currentOver"
+          type="range"
+          id="currentBall"
+          name="currentBall"
+          min="0"
           max="20"
-          min="5"
           required
         />
 
@@ -124,38 +124,18 @@
           type="number"
           id="currentScore"
           name="currentScore"
-          required
           min="0"
+          required
         />
 
-        <label for="wicketsRemaining">Wickets Remaining</label>
+        <label for="currentWickets">Current Wickets</label>
         <input
           type="number"
-          id="wicketsRemaining"
-          name="wicketsRemaining"
+          id="currentWickets"
+          name="currentWickets"
           required
           max="10"
           min="0"
-        />
-
-        <label for="PastWickets">Last 5 Over Wickets</label>
-        <input
-          type="number"
-          id="PastWickets"
-          name="PastWickets"
-          required
-          min="0"
-          max="10"
-        />
-
-        <label for="PastRuns">Last 5 Over Runs</label>
-        <input
-          type="number"
-          id="PastRuns"
-          name="PastRuns"
-          max="180"
-          min="0"
-          required
         />
 
         <label for="stadium">Stadium</label>

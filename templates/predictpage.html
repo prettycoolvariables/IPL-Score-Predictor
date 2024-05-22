@@ -7,7 +7,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{{ url_for('static', filename='styles/predictpage.css') }}"
+      href="../static/styles/predictpage.css"
     />
   </head>
   <body>
@@ -38,7 +38,7 @@
         <br />
         <br />
         <h2 style="color: white">Predicted Score:</h2>
-        <p id="predicted-score"></p>
+        <p id="predicted-score">{{score}}</p>
       </div>
       <div class="lgtbt">
         <form id="logoutForm" action="{{ url_for('home') }}">

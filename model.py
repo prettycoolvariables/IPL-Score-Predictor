@@ -6,7 +6,7 @@ from sklearn.metrics import r2_score
 from sklearn.model_selection import cross_val_score
 import pickle
 
-df= pd.read_csv('2013-2022_cleaned.csv')
+df= pd.read_csv('C:/Users/Aleena Maria Rajesh/Desktop/miniproject/IPL-Score-Predictor/2013-2022_cleaned.csv')
 print(df.columns)
 df.shape
 
