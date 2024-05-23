@@ -12,7 +12,7 @@ app.secret_key = 'your_secret_key'
 with open('model.pkl', 'rb') as file:
     model = pickle.load(file)
 
-client = MongoClient("mongodb+srv://aleenamariarajesh:nI7ya8Sf8W5INqlY@cluster0.ik10nn7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",server_api=ServerApi('1'))
+client = MongoClient("mongodb+srv://aleenamariarajesh:nI7ya8Sf8W5INqlY@cluster0.tz10h9w.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",server_api=ServerApi('1'))
 mongo = client["myDatabase"]
 users_collection = mongo['users']
 
@@ -178,13 +178,13 @@ def predict():
         print(output)
         return render_template('predictpage.html', score=output)
 
-# if __name__ == "__main__":
-#     app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
 
-import os
-if __name__ == "_main_":
-    port = int(os.environ.get('PORT', 5000))
-    app.run(debug=True, host='0.0.0.0', port=port)
+# import os
+# if __name__ == "_main_":
+#     port = int(os.environ.get('PORT', 5000))
+#     app.run(debug=True, host='0.0.0.0', port=port)
 
 
 
