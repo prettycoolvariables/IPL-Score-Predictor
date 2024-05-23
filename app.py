@@ -12,7 +12,7 @@ app.secret_key = 'your_secret_key'
 with open('model.pkl', 'rb') as file:
     model = pickle.load(file)
 
-client = MongoClient("mongodb+srv://admin:mongo@cluster0.8aejxvh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",server_api=ServerApi('1'))
+client = MongoClient("mongodb+srv://aleenamariarajesh:nI7ya8Sf8W5INqlY@cluster0.ik10nn7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",server_api=ServerApi('1'))
 mongo = client["myDatabase"]
 users_collection = mongo['users']
 
@@ -29,10 +29,7 @@ def create():
         last_name = request.form['lname']
         username = request.form['uname']
         email = request.form['email']
-        password = request.form['password']
-        
-      
-        
+        password = request.form['password']      
         # Insert user data into MongoDB
         user_data = {
             'first_name': first_name,
@@ -54,10 +51,7 @@ def login():
     if request.method == 'POST':
         # Get form data
         username = request.form['username']
-        password = request.form['password']
-        
-        
-        
+        password = request.form['password']     
         # Validate user credentials against MongoDB
         user = users_collection.find_one({'username': username, 'password': password})
         if user:
@@ -182,28 +176,15 @@ def predict():
         cwicket=2
         output=score_predict(venue,inn,ball,batting, bowling,runs,cruns,cwicket)
         print(output)
-        # data = {
-        #     'venue': [int(request.form['stadium'])],
-        #     'innings': [1],
-        #     'ball': [float(request.form['currentBall'])],
-        #     'batting_team': [request.form['battingteam']],
-        #     'bowling_team': [request.form['bowlingteam']],
-        #     'runs': [float(request.form['currentScore'])],
-        #     'current_r]uns': [float(request.form['currentScore'])],
-        #     'wicket': [0],
-        #     'current_wickets': [int(request.form['currentWickets'])]
-        # }
-        # input_data = pd.DataFrame(data)
-        # print(input_data)
-        # prediction = model.predict(input_data)
-        # output = prediction[0]
         return render_template('predictpage.html', score=output)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)
 
-
-
+import os
+if __name__ == "_main_":
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
 
 
 
