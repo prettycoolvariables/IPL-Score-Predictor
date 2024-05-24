@@ -7,17 +7,17 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="../static/styles/matchpage.css"
+      href="{{ url_for('static', filename='styles/matchpage.css') }}"
     />
   </head>
   <body>
     <div class="container">
       <h2>IPL Score Prediction</h2>
-      <form action="{{ url_for('predict') }}" method="post">
-        <label for="battingteam">Batting Team</label>
+      <form action="{{ url_for('predict') }}" method="POST">
+        <label for="battingTeam">Batting Team</label>
         <select
-          id="battingteam"
-          name="battingteam"
+          id="battingTeam"
+          name="battingTeam"
           onchange="updateSecondDropdown()"
           required
         >
@@ -36,10 +36,10 @@
           <option value="Gujarat Titans">Gujarat Titans</option>
         </select>
 
-        <label for="bowlingteam">Bowling Team</label>
+        <label for="bowlingTeam">Bowling Team</label>
         <select
-          id="bowlingteam"
-          name="bowlingteam"
+          id="bowlingTeam"
+          name="bowlingTeam"
           onchange="updateFirstDropdown()"
           required
         >
@@ -60,8 +60,8 @@
 
         <script>
           function updateSecondDropdown() {
-            var firstDropdown = document.getElementById("battingteam");
-            var secondDropdown = document.getElementById("bowlingteam");
+            var firstDropdown = document.getElementById("battingTeam");
+            var secondDropdown = document.getElementById("bowlingTeam");
             var selectedValue = firstDropdown.value;
             var options = secondDropdown.options;
             for (var i = 0; i < options.length; i++) {
@@ -76,8 +76,8 @@
 
         <script>
           function updateFirstDropdown() {
-            var firstDropdown = document.getElementById("bowlingteam");
-            var secondDropdown = document.getElementById("battingteam");
+            var firstDropdown = document.getElementById("bowlingTeam");
+            var secondDropdown = document.getElementById("battingTeam");
             var selectedValue = firstDropdown.value;
             var options = secondDropdown.options;
             for (var i = 0; i < options.length; i++) {
@@ -90,7 +90,7 @@
           }
         </script>
 
-        <script>
+        <!-- <script>
           document.addEventListener("DOMContentLoaded", function () {});
 
           document
@@ -98,8 +98,8 @@
             .addEventListener("submit", function (event) {
               event.preventDefault(); // Prevent default form submission
               // Get selected teams
-              const battingTeam = document.getElementById("battingteam").value;
-              const bowlingTeam = document.getElementById("bowlingteam").value;
+              const battingTeam = document.getElementById("battingTeam").value;
+              const bowlingTeam = document.getElementById("bowlingTeam").value;
 
               // Store selected teams in localStorage
               localStorage.setItem(
@@ -107,13 +107,24 @@
                 JSON.stringify({ battingTeam, bowlingTeam })
               );
             });
-        </script>
+        </script> -->
 
-        <label for="currentBall">Current Ball</label>
+        <label for="Innings">Innings</label>
         <input
-          type="range"
+          type="number"
+          id="Innings"
+          name="Innings"
+          min="1"
+          max="2"
+          required
+        />
+
+        <label for="currentBall">Current Ball (over.ball)</label>
+        <input
+          type="number"
           id="currentBall"
           name="currentBall"
+          step="0.01"
           min="0"
           max="20"
           required
@@ -128,33 +139,47 @@
           required
         />
 
+        <label for="currentRuns">Current Run (s)</label>
+        <input
+          type="number"
+          id="currentRuns"
+          name="currentRuns"
+          required
+          max="6"
+          min="0"
+        />
+
         <label for="currentWickets">Current Wickets</label>
         <input
           type="number"
           id="currentWickets"
           name="currentWickets"
           required
-          max="10"
+          max="9"
           min="0"
         />
 
         <label for="stadium">Stadium</label>
         <select id="stadium" name="stadium" required>
           <option value="">Select Stadium</option>
-          <option value="1">Eden Gardens</option>
-          <option value="2">Wankhede Stadium</option>
-          <option value="3">M. Chinnaswamy Stadium</option>
-          <option value="4">M. A. Chidambaram Stadium</option>
-          <option value="5">Arun Jaitley Stadium</option>
-          <option value="6">Rajiv Gandhi International Stadium</option>
-          <option value="7">Narendra Modi Stadium</option>
-          <option value="8">
+          <option value="Eden Gardens">Eden Gardens</option>
+          <option value="Wankhede Stadium">Wankhede Stadium</option>
+          <option value="M. Chinnaswamy Stadium">M. Chinnaswamy Stadium</option>
+          <option value="M. A. Chidambaram Stadium">
+            M. A. Chidambaram Stadium
+          </option>
+          <option value="Arun Jaitley Stadium">Arun Jaitley Stadium</option>
+          <option value="Rajiv Gandhi International Stadium">
+            Rajiv Gandhi International Stadium
+          </option>
+          <option value="Narendra Modi Stadium">Narendra Modi Stadium</option>
+          <option value="Punjab Cricket Association IS Bindra Stadium">
             Punjab Cricket Association IS Bindra Stadium
           </option>
-          <option value="9">
+          <option value="Himachal Pradesh Cricket Association Stadium">
             Himachal Pradesh Cricket Association Stadium
           </option>
-          <option value="10">Sawai Mansingh Stadium</option>
+          <option value="Sawai Mansingh Stadium">Sawai Mansingh Stadium</option>
         </select>
         <input type="submit" value="Predict" />
       </form>

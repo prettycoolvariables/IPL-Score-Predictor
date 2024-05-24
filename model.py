@@ -6,7 +6,7 @@ from sklearn.metrics import r2_score
 from sklearn.model_selection import cross_val_score
 import pickle
 
-df= pd.read_csv('C:/Users/Aleena Maria Rajesh/Desktop/miniproject/IPL-Score-Predictor/2013-2022_cleaned.csv')
+df= pd.read_csv('C:/Users/Aleena Maria Rajesh/Desktop/miniproject/all/2013-2022_cleaned_2.csv')
 print(df.columns)
 df.shape
 
@@ -14,21 +14,11 @@ df.shape
 
 df.dropna(inplace=True)
 
-df['helper']=df['match_id']*df['innings']
-df['current_wickets'] = (df.wicket).groupby(df.helper).cumsum()
-
-print(df.columns)
-df.shape
-
-x= df[['venue', 'innings', 'ball','batting_team', 'bowling_team', 'runs', 'current_runs', 'wicket','current_wickets']]
-y = df['TotalRuns']
-print(x.shape)
-x=pd.get_dummies(x,dtype='int')
-
 x= df[['venue', 'innings', 'ball','batting_team', 'bowling_team', 'runs', 'current_runs', 'current_wickets']]
 y = df['TotalRuns']
 print(x.shape)
 x=pd.get_dummies(x,dtype='int')
+
 
 #x.to_csv('x.csv', index=False)
 # print(y)
@@ -44,10 +34,10 @@ p=regressor.predict(x)
 r=r2_score(y,p)
 print(r*100)
 
-test_score = str(regressor.score(test_x, test_y)*100)
-print(test_score)
+# test_score = str(regressor.score(test_x, test_y)*100)
+# print(test_score)
 
-print(np.mean(cross_val_score(regressor, train_x, train_y, cv=10)))
+# print(np.mean(cross_val_score(regressor, train_x, train_y, cv=10)))
 
 #PICKLE
 
