@@ -184,14 +184,15 @@ def predict():
         return render_template("predictpage.html", score=output,battingTeam=batting_Team, bowlingTeam=bowling_Team,battingLogo=batting_logo,
                            bowlingLogo=bowling_logo)
 
-# if __name__ == "__main__":
-#     app.run(debug=True)
+if __name__ == "__main__":
+     app.run(debug=True)
 
-import os
-if __name__ == "_main_":
-    port = int(os.environ.get('PORT', 5000))
-    app.run(debug=True, host='0.0.0.0', port=port)
-
-
+# import os
+# if __name__ == "_main_":
+#     port = int(os.environ.get('PORT', 5000))
+#     app.run(debug=True, host='0.0.0.0', port=port)
 
 
+
+
+#checking git
